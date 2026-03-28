@@ -7,6 +7,7 @@ import { FloatingBalloons } from './components/FloatingBalloons'
 import { PageContent } from './components/PageContent'
 import { Button } from './components/ui/button'
 import { Volume2, VolumeX, Calendar } from 'lucide-react'
+import { Girl3D } from './components/Girl3D'
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1)
