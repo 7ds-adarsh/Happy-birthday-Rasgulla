@@ -21,8 +21,8 @@ export default function App() {
       const now = new Date()
       const currentYear = now.getFullYear()
       
-      // September 19th at 12:00 AM (midnight) - month is 0-indexed so 8 = September
-      const unlockDate = new Date(currentYear, 8, 19, 0, 0, 0, 0) // September 19th, 12:00:00.000 AM
+      // September 30th at 12:00 AM (midnight) - month is 0-indexed so 8 = September
+      const unlockDate = new Date(currentYear, 8, 30, 0, 0, 0, 0) // September 30th, 12:00:00.000 AM
       
       // For testing purposes, you can uncomment the line below to unlock all pages
       // setIsUnlocked(true)
