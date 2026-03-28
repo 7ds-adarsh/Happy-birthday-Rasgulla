@@ -91,7 +91,8 @@ export default function App() {
       {/* Animated Background Elements */}
       <FloatingHearts />
       <FloatingBalloons />
-      
+      <Girl3D />
+
       {/* Animated Gradient Overlay */}
       <motion.div
         className="fixed inset-0 opacity-30"
