@@ -19,12 +19,12 @@ export function CountdownTimer() {
       const now = new Date()
       const currentYear = now.getFullYear()
 
-      // Target date: September 19th at 12:00 AM (midnight)
+      // Target date: September 30th at 12:00 AM (midnight)
       let targetDate = new Date(currentYear, 2, 30, 0, 0, 0, 0) // March 30th at 12:00 AM (midnight)
 
       // If the target date has passed this year, set it for next year
       if (now > targetDate) {
-        targetDate = new Date(currentYear + 1, 8, 19, 0, 0, 0)
+        targetDate = new Date(currentYear + 1, 8, 30, 0, 0, 0)
       }
 
       const difference = targetDate.getTime() - now.getTime()
@@ -70,7 +70,7 @@ export function CountdownTimer() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
     >
-      <h3 className="text-xl text-pink-600 mb-6 italic font-bold">Countdown to Sep 19th at 12:00 AM</h3>
+      <h3 className="text-xl text-pink-600 mb-6 italic font-bold">Countdown to Sep 30th at 12:00 AM</h3>
       <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto">
         {[
           { label: 'Days', value: timeLeft.days },
