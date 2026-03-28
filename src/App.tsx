@@ -91,7 +91,6 @@ export default function App() {
       {/* Animated Background Elements */}
       <FloatingHearts />
       <FloatingBalloons />
-      <Girl3D />
 
       {/* Animated Gradient Overlay */}
       <motion.div
@@ -150,6 +149,7 @@ export default function App() {
 
         {/* Page Content */}
         <AnimatePresence mode="wait">
+          <Girl3D />
           <PageContent 
             key={currentPage} 
             pageNumber={currentPage} 
