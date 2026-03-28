@@ -27,7 +27,7 @@ export default function App() {
       // For testing purposes, you can uncomment the line below to unlock all pages
       // setIsUnlocked(true)
       
-      // Check if current time is on or after September 19th at 12:00 AM
+      // Check if current time is on or after September 30th at 12:00 AM
       if (now >= unlockDate) {
         setIsUnlocked(true)
       } else {
