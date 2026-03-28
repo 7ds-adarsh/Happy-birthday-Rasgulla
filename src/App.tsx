@@ -15,7 +15,7 @@ export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const totalPages = 6
 
-  // Check if pages should be unlocked (September 19th at 12:00 AM / midnight)
+  // Check if pages should be unlocked (September 30th at 12:00 AM / midnight)
   useEffect(() => {
     const checkUnlockStatus = () => {
       const now = new Date()
