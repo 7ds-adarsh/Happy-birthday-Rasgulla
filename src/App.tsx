@@ -31,7 +31,7 @@ export default function App() {
       if (now >= unlockDate) {
         setIsUnlocked(true)
       } else {
-        setIsUnlocked(false)
+        setIsUnlocked(true)
       }
     }
 
