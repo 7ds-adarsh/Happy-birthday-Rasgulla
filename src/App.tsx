@@ -1,8 +1,12 @@
-// Some contextual code... 
+'use client'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { FloatingHearts } from './components/FloatingHearts'
+import { FloatingBalloons } from './components/FloatingBalloons'
+import { PageContent } from './components/PageContent'
+import { Button } from './components/ui/button'
+import { Volume2, VolumeX, Calendar } from 'lucide-react'
 
-// Comment added on September 30th
-
-<<<<<<< HEAD
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1)
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
@@ -237,6 +241,3 @@ export default function App() {
     </div>
   )
 }
-=======
-// Rest of the code...
->>>>>>> 2dcbdff519a37a7217ac2b18cd38e71151cca3ea
