@@ -350,32 +350,63 @@ export function PageContent({ pageNumber, isUnlocked }: PageContentProps) {
                 ))}
               </motion.div>
 
-              <h2 className="text-3xl md:text-5xl text-pink-600 text-glow-pink mb-8 italic font-bold">
-                MAdam Ji's Specials!
+              <h2 className="text-2xl sm:text-3xl md:text-5xl text-pink-600 text-glow-pink mb-6 md:mb-8 italic font-bold px-2">
+                Madam Ji&apos;s Specials!
               </h2>
 
-              <div className="relative mx-auto mb-8 w-full max-w-5xl h-96">
-                {[
+              {(() => {
+                const specialsLayout = [
                   { top: '3%', left: '10%', rotate: '-8deg' },
                   { top: '20%', left: '45%', rotate: '12deg' },
                   { top: '55%', left: '25%', rotate: '7deg' },
                   { top: '38%', left: '70%', rotate: '-10deg' },
-                ].map((card, index) => (
-                  <div
-                    key={index}
-                    className="absolute flex items-center justify-center p-2 bg-gray-900/85 border border-gray-700 rounded-xl shadow-2xl backdrop-blur-md"
-                    style={{ top: card.top, left: card.left, transform: `rotate(${card.rotate})`, width: '240px', height: '140px' }}
+                ] as const
+
+                const renderSpecialsInner = () => (
+                  <motion.div
+                    className="text-center text-xs sm:text-sm md:text-base text-gray-100 font-bold italic p-2 leading-snug"
+                    animate={{ opacity: [0.6, 1, 0.6], scale: [0.95, 1.05, 0.95] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
                   >
-                    <motion.div
-                      className="text-center text-sm md:text-base text-gray-100 font-bold italic p-2"
-                      animate={{ opacity: [0.6, 1, 0.6], scale: [0.95, 1.05, 0.95] }}
-                      transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-                    >
-                      photo khud laga lena
-                    </motion.div>
-                  </div>
-                ))}
-              </div>
+                    photo khud laga lena
+                  </motion.div>
+                )
+
+                return (
+                  <>
+                    {/* Mobile / small screens: readable grid */}
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md sm:max-w-lg mx-auto mb-8 px-1 sm:px-2 md:hidden">
+                      {specialsLayout.map((_, index) => (
+                        <div
+                          key={`special-mobile-${index}`}
+                          className={`flex min-h-[108px] sm:min-h-[120px] items-center justify-center rounded-xl border border-gray-700 bg-gray-900/85 p-2 shadow-2xl backdrop-blur-md ${
+                            index % 2 === 0 ? '-rotate-1' : 'rotate-1'
+                          }`}
+                        >
+                          {renderSpecialsInner()}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* md+: scattered collage */}
+                    <div className="relative mx-auto mb-8 hidden h-[22rem] w-full max-w-5xl md:block lg:h-96">
+                      {specialsLayout.map((card, index) => (
+                        <div
+                          key={`special-desktop-${index}`}
+                          className="absolute flex h-[120px] w-[200px] items-center justify-center rounded-xl border border-gray-700 bg-gray-900/85 p-2 shadow-2xl backdrop-blur-md lg:h-[140px] lg:w-[240px]"
+                          style={{
+                            top: card.top,
+                            left: card.left,
+                            transform: `rotate(${card.rotate})`,
+                          }}
+                        >
+                          {renderSpecialsInner()}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )
+              })()}
 
               <motion.div
                 className="space-y-6"
