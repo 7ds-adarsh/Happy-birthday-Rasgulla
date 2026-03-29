@@ -21,7 +21,11 @@ export default function App() {
       const now = new Date()
       const currentYear = now.getFullYear()
       
+<<<<<<< HEAD
       // September 19th at 12:00 AM (midnight) - month is 0-indexed so 8 = September
+=======
+      // September 30th at 12:00 AM (midnight) - month is 0-indexed so 8 = September
+>>>>>>> adc4c6b62ee1af9a8e7f913dd5170213ce863ca5
       const unlockDate = new Date(currentYear, 8, 30, 0, 0, 0, 0) // September 30th, 12:00:00.000 AM
       
       // For testing purposes, you can uncomment the line below to unlock all pages
@@ -31,7 +35,7 @@ export default function App() {
       if (now >= unlockDate) {
         setIsUnlocked(true)
       } else {
-        setIsUnlocked(false)
+        setIsUnlocked(true)
       }
     }
 
@@ -90,7 +94,7 @@ export default function App() {
       {/* Animated Background Elements */}
       <FloatingHearts />
       <FloatingBalloons />
-      
+
       {/* Animated Gradient Overlay */}
       <motion.div
         className="fixed inset-0 opacity-30"
