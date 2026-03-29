@@ -15,19 +15,19 @@ export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const totalPages = 6
 
-  // Check if pages should be unlocked (September 19th at 12:00 AM / midnight)
+  // Check if pages should be unlocked (September 30th at 12:00 AM / midnight)
   useEffect(() => {
     const checkUnlockStatus = () => {
       const now = new Date()
       const currentYear = now.getFullYear()
       
       // September 19th at 12:00 AM (midnight) - month is 0-indexed so 8 = September
-      const unlockDate = new Date(currentYear, 8, 19, 0, 0, 0, 0) // September 19th, 12:00:00.000 AM
+      const unlockDate = new Date(currentYear, 8, 30, 0, 0, 0, 0) // September 30th, 12:00:00.000 AM
       
       // For testing purposes, you can uncomment the line below to unlock all pages
       // setIsUnlocked(true)
       
-      // Check if current time is on or after September 19th at 12:00 AM
+      // Check if current time is on or after September 30th at 12:00 AM
       if (now >= unlockDate) {
         setIsUnlocked(true)
       } else {
