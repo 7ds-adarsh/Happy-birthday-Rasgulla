@@ -354,10 +354,6 @@ export function PageContent({ pageNumber, isUnlocked }: PageContentProps) {
                 Madam Ji&apos;s Specials!
               </h2>
 
-              <h2 className="text-2xl sm:text-3xl md:text-5xl text-pink-600 text-glow-pink mb-6 md:mb-8 italic font-bold px-2">
-                Madam Ji&apos;s Specials!
-              </h2>
-
               {(() => {
                 const specialsLayout = [
                   { top: '3%', left: '10%', rotate: '-8deg' },
